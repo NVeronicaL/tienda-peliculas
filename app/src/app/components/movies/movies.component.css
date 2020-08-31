@@ -1,0 +1,46 @@
+
+* {
+  box-sizing: border-box;
+}
+
+.contenedor {
+  margin: 100px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.example-card {
+  width: 90%;
+  height: 550px;
+  border: 2px solid #cccccc;
+  text-align: center;
+  border-radius: 20px;
+  margin: 10px;
+  transition: transform .3s;
+  filter: drop-shadow(9px 4px 15px #000000);
+}
+
+.example-card:hover {
+  transform: scale(1.1); 
+}
+
+.mat-card-image {
+  width: auto;
+  margin: auto;
+  height: 350px;
+}
+
+.preci {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  margin: 26px 0;
+  font-size: 20px;
+}
+
+.star {
+  color: yellow;
+  font-size: 20px;
+  margin: 10px;
+}
