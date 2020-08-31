@@ -1,3 +1,4 @@
+import { MoviesService } from './../../services/movies.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
-
-  constructor() { }
+  listmovies;
+  constructor(private movieService: MoviesService) { }
 
   ngOnInit(): void {
+    this.getMoviesList();
+  }
+
+  getMoviesList() {
+    this.movieService.getApi()
+      .subscribe( (response) => {
+        console.log(response);
+        this.listmovies = response['movies'];
+      }, error => {
+        console.log('Ups, Hay un error: ', error);
+      });
   }
 
 }
